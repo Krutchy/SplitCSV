@@ -32,3 +32,16 @@ These arguments are all optional; any you don't provide will use their specified
 A few extra notes:
 - Any files in the output location with the same name as any chunk will likely be overwritten.
 - If a directory doesn't exist at the specified output location, one will be made to hold the resulting chunks.
+## Generating a Sample CSV
+For testing, there is an additional script that can create a CSV to be split up by the original. It uses the same packages and can be run in the same location:
+```
+python GenerateSampleCSV.py
+```
+This script does not *require* any arguments, but has several optional, nonpositional ones:
+```
+--filepath FILEPATH         Filepath and name for resulting CSV file (default: 'sample.csv')
+--total_rows TOTAL_ROWS     Integer number of rows resulting file should have besides header (default: 99999)
+```
+Notes:
+- As with the main script, you should specify one *less* than you want for the CSV as the header is techncially a row (e.g., 99999 instead of 100000).
+- You can specify a directory to output this file to, and the script will make that directory if it doesn't already exist.
